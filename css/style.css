@@ -1,0 +1,166 @@
+:root {
+    --bg: #e9f5e1;
+    --card: #fbfff7;
+    --green-dark: #2f5d34;
+    --green: #5a9a5f;
+    --green-light: #cfe8c3;
+    --soil: #7a5230;
+    --text: #254028;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "trebuchet ms", sans-serif;
+    background: linear-gradient(180deg, #d8efff 0%, var(--bg) 40%);
+    color: var(--text);
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: grid;
+    gap: 24px;
+}
+
+header {
+    text-align: center;
+}
+
+#clock{
+    font-size: 4.5rem;
+    color: var(--green-dark);
+}
+
+#greeting {
+    font-size: 1.2rem;
+    margin-top: 4px;
+}
+
+#search-input {
+    width: 100%;
+    padding: 14px 20px;
+    border: 2px solid var(--green-light);
+    border-radius: 999px;
+    background-color: var(--card);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+}
+
+#search-input:focus {
+    border-color: var(--green);
+}
+
+.card h2 {
+    margin-bottom: 12px;
+    color: var(--green-dark);
+}
+
+ul {
+    list-style: none;
+}
+
+#links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+#links li {
+    background: var(--green-light);
+    padding: 6px 12px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#links a {
+    color: var(--green-dark);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.remove {
+    background: none;
+    color: var(--soil);
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.row {
+    display: flex;
+    gap: 8px;
+}
+
+.row-input {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid var(--green-light);
+    border-radius: 10px;
+    min-width: 0;
+}
+
+button[type=submit] {
+    background: var(--green);
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button[type=submit]:hover {
+    background: var(--green-dark);
+}
+
+#plant {
+    font-size: 4rem;
+    text-align: center;
+    transform-origin: bottom center;
+    animation: sway 3s ease-in-out infinite;
+}
+
+#plan-text {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+#tasks {
+    margin-top: 14px;
+}
+
+#tasks li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0px;
+    border-bottom: 1px dashed var(--green-light);
+}
+
+#tasks li.done span {
+    text-decoration: line-through;
+    opacity: 0.55;
+} 
+
+#tasks span {
+    flex: 1;
+}
+
+@keyframes sway {
+    0%, 100% { transform: rotate(-4deg); }
+    50% { transform: rotate(4deg); }
+}
+
+@media (max-width: 500px) {
+    #clock { font-size: 3.2rem; }
+    .row { flex-direction: column; }
+}
