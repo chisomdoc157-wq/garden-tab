@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Tab</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="container">
+
+        <header>
+            <h1 id="clock">00:00</h1>
+            <p id="greeting"></p>
+        </header>
+
+        <form id="search-form">
+            <input type="text" id="search-input" placeholder="Search or paste a URL..." autofocus>
+        </form>
+
+        <section class="card">
+            <h2>Quick Links</h2>
+            <ul id="links"></ul>
+            <form id="link-form" class="row">
+                <input type="text" id="link-name" placeholder="Name" required>
+                <input type="url" id="link-url" placeholder="example.com" required>
+                <button type="submit">Add Link</button>
+            </form>
+
+            <section class="card">
+                    <h2>Garden Tasks</h2>
+                    <div id="plant">🌱</div>
+                    <p id="plant-text"></p>
+                    <ul id="tasks"></ul>
+                    <form id="task-form" class="row">
+                <input type="text" id="task-input" placeholder="Plant a new task..." required>
+                <button type="submit">Plant</button>
+            </form>
+        </section>
+
+    </main>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
