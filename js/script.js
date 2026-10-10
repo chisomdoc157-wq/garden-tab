@@ -22,3 +22,47 @@ function updateClock() {
 // Run immediately and then every second
 updateClock();
 setInterval(updateClock, 1000);
+
+const searchForm = document.getElementById('search-form');
+const searchInput = document.getElementById('search-input');
+
+searchForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const query = searchInput.value.trim();
+
+    if (query === ''){ 
+        return;
+ }
+
+ //  If the input looks like a URL, open it
+ if (
+    query.includes('.') &&
+    !query.includes(' ')
+ ){
+    let url = query;
+
+    if (!/^https?:\/\//i.test(url)) {
+        url = 'https://' + url;
+    }
+
+    try {
+        const parseurl = new URL(url);
+
+        if (
+            parseurl.protocol === 'http:' ||
+            parseurl.protocol === 'https:'
+        ) {
+            window.location.href = parseurl.href;
+        }
+    } catch {
+        // if the URL is invalid, search for it instead
+        window.location.href = 
+         'https://www.google.com/search?q=' + encodeURIComponent(query);
+       }
+    } else {
+    // Otherwise, search Google
+    window.location.href =
+      "https://www.google.com/search?q=" + encodeURIComponent(query);
+    }
+});
